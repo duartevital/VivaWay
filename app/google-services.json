@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "775857436297",
+    "firebase_url": "https://vivaway.firebaseio.com",
+    "project_id": "vivaway",
+    "storage_bucket": "vivaway.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775857436297:android:31774bb122be9a18",
+        "android_client_info": {
+          "package_name": "com.example.vivaway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775857436297-3r0eg6p8rgaomr59l8efcjbshsbapq1e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vivaway",
+            "certificate_hash": "7e05ad2569027830c14da13695c7a3a5204422b3"
+          }
+        },
+        {
+          "client_id": "775857436297-h07ml9rggondac7bdse2qk59jdcfjut2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmh3r_znvw4sr6s964YWLoflXdyD_gZVo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "775857436297-h07ml9rggondac7bdse2qk59jdcfjut2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
