@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     public void doLogin(View view){
         final Intent intent = new Intent(LoginActivity.this, MainMenu.class);
         if (!checkExceptions(view)) {
-            firebaseAuth.signInWithEmailAndPassword(email_et.getText().toString(), password_et.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            firebaseAuth.signInWithEmailAndPassword(email_et.getText().toString().trim(), password_et.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful())
