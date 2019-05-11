@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
@@ -16,13 +17,12 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class MainMenu extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
-        generateQRcode("croma");
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        generateQRcode(firebaseAuth.getCurrentUser().getEmail());
         getSupportActionBar().setTitle("VivaWay");
     }
 
@@ -36,17 +36,16 @@ public class MainMenu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public Bitmap generateQRcode(String content) {
+    public void generateQRcode(String content) {
         ImageView qrCode = findViewById(R.id.qr_code_img);
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE,150,150);
+            BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE,250,250);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             qrCode.setImageBitmap(bitmap);
         } catch (WriterException e) {
             e.printStackTrace();
         }
-        return null;
     }
 }
