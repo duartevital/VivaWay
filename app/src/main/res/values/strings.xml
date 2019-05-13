@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">VivaWay</string>
     <string name="title_activity_main_menu">MainMenu</string>
+    <string name="facebook_app_id">871038189908733</string>
+    <string name="fb_login_protocol_scheme">fb871038189908733</string>
+
 </resources>
