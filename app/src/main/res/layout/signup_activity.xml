@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/app_name_img"
             android:layout_width="0dp"
-            android:layout_height="199dp"
+            android:layout_height="250dp"
             android:background="@drawable/viva_way"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,66 +25,27 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
+            android:onClick="doSignUp"
             android:text="Sign Up"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:onClick="doSignUp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password_et" />
 
-        <android.support.v7.widget.GridLayout
-            android:id="@+id/social_media_grid"
-            android:layout_width="wrap_content"
-            android:layout_height="61dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login_tv">
-
-            <ImageButton
-                android:id="@+id/facebook_btn"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/facebook_icon" />
-
-            <ImageButton
-                android:id="@+id/email_btn"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/email_icon" />
-
-            <ImageButton
-                android:id="@+id/twitter_btn"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/twitter_icon" />
-        </android.support.v7.widget.GridLayout>
-
         <EditText
             android:id="@+id/email_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="32dp"
             android:hint="E-mail"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:singleLine="true"
-            android:imeOptions="actionDone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_name_img" />
@@ -98,7 +59,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:singleLine="true"
-            android:imeOptions="actionDone"
+            android:imeOptions="actionNext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,6 +77,7 @@
             android:textSize="20sp"
             android:singleLine="true"
             android:imeOptions="actionDone"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username_et" />
@@ -125,13 +87,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
             android:clickable="true"
+            android:onClick="goLogin"
             android:text="Already have an account? Login!"
             android:textAlignment="center"
             android:textSize="22sp"
-            android:onClick="goLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signup_btn" />

@@ -33,6 +33,7 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_activity);
+        getSupportActionBar().hide();
 
         email_et = findViewById(R.id.email_et);
         username_et = findViewById(R.id.username_et);

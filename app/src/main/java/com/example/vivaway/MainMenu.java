@@ -22,7 +22,7 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        generateQRcode(firebaseAuth.getCurrentUser().getEmail());
+        generateQRcode(firebaseAuth.getCurrentUser().getUid());
         getSupportActionBar().setTitle("VivaWay");
     }
 
