@@ -15,11 +15,11 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_name_txt"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_tv"
         app:srcCompat="@drawable/qr_code" />
 
     <TextView
-        android:id="@+id/user_name_txt"
+        android:id="@+id/user_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/pass_type_txt"
+        android:id="@+id/pass_type_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -56,7 +56,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass_type_txt">
+        app:layout_constraintTop_toBottomOf="@+id/pass_type_tv">
 
         <ImageButton
             android:id="@+id/buy_btn"
