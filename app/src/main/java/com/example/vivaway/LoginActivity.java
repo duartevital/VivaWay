@@ -51,25 +51,36 @@ public class LoginActivity extends AppCompatActivity {
         signup_tv = findViewById(R.id.signup_tv);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        LoginButton loginButton = findViewById(R.id.facebook_login_button);
-        loginButton.registerCallback(callbackManager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        Log.d("FACEBOOK", "facebook:onSuccess:" + loginResult);
-                        handleFacebookAccessToken(loginResult.getAccessToken());
-                    }
 
-                    @Override
-                    public void onCancel() {
-                        Log.d("FACEBOOK", "facebook:onCancel");
-                    }
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        if(isLoggedIn(accessToken))   {
+            handleFacebookAccessToken(accessToken);
+        } else {
 
-                    @Override
-                    public void onError(FacebookException exception) {
-                        Log.d("FACEBOOK", "facebook:onError", exception);
-                    }
-                });
+            LoginButton loginButton = findViewById(R.id.facebook_login_button);
+            loginButton.registerCallback(callbackManager,
+                    new FacebookCallback<LoginResult>() {
+                        @Override
+                        public void onSuccess(LoginResult loginResult) {
+                            Log.d("FACEBOOK", "facebook:onSuccess:" + loginResult);
+                            handleFacebookAccessToken(loginResult.getAccessToken());
+                        }
+
+                        @Override
+                        public void onCancel() {
+                            Log.d("FACEBOOK", "facebook:onCancel");
+                        }
+
+                        @Override
+                        public void onError(FacebookException exception) {
+                            Log.d("FACEBOOK", "facebook:onError", exception);
+                        }
+                    });
+        }
+    }
+
+    public boolean isLoggedIn(AccessToken accessToken) {
+        return accessToken != null && !accessToken.isExpired();
     }
 
     @Override
