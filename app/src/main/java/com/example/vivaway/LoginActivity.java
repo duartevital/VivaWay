@@ -21,6 +21,8 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
@@ -28,16 +30,24 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
+    public static final String NAME_KEY = "Name";
     EditText email_et;
     EditText password_et;
     Button login_btn;
     TextView signup_tv;
 
     FirebaseAuth firebaseAuth;
+    AccessToken accessToken;
     CallbackManager callbackManager = CallbackManager.Factory.create();
+    private CollectionReference colRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        accessToken = AccessToken.getCurrentAccessToken();
         if(isLoggedIn(accessToken))   {
             handleFacebookAccessToken(accessToken);
         } else {
@@ -63,6 +73,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(LoginResult loginResult) {
                             Log.d("FACEBOOK", "facebook:onSuccess:" + loginResult);
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            insertUser(user);
                             handleFacebookAccessToken(loginResult.getAccessToken());
                         }
 
@@ -152,5 +164,24 @@ public class LoginActivity extends AppCompatActivity {
             exception = true;
         }
         return exception;
+    }
+
+    public void insertUser(FirebaseUser user){
+        colRef = FirebaseFirestore.getInstance().collection("users");
+        Map<String, Object> data = new HashMap<String, Object>();
+        data.put(NAME_KEY, user.getDisplayName());
+        colRef.document(user.getUid()).set(data)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d("DOC", "Document created successfully");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("DOC", "Error while creating document");
+                    }
+                });
     }
 }
