@@ -7,42 +7,44 @@
     tools:context=".BuyActivity">
 
     <Button
-        android:id="@+id/carris_btn"
-        android:layout_width="wrap_content"
+        android:id="@+id/passe_proprio_btn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Carris"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="changeLayout"
+        android:text="Passe Próprio"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="241dp" />
 
     <Button
-        android:id="@+id/cp_btn"
-        android:layout_width="wrap_content"
+        android:id="@+id/passe_navegante_btn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="CP"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:text="Passe Navegante"
+        android:textAlignment="center"
+        android:onClick="changeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carris_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/passe_proprio_btn" />
 
     <Button
-        android:id="@+id/rl_btn"
-        android:layout_width="wrap_content"
+        android:id="@+id/passe_combinado_btn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="RL"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:text="Passe Combinado"
+        android:textAlignment="center"
+        android:onClick="changeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cp_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/passe_navegante_btn" />
 
-    <Button
-        android:id="@+id/fertagus_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Fertagus"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rl_btn" />
 </android.support.constraint.ConstraintLayout>

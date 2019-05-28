@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/metro_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Metro"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/mts_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="MTS - Metro Sul do Tejo \n"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/autocarro_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Autocarro"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/hlm_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HLM - Henrique Leonardo da Mota"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/id_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ID - Isidoro Duarte"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/ca_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="JJ - Joaquim Jerónimo"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/rl_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RL - Rodoviária de Lisboa"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/rt_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RT - Rodoviária do Tejo"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sc_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SC - Scotturb"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/sft_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SFT - Sulfertagus"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/tcb_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TCB - Transportes Colectivos do Barreiro"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/tst_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TST - Transportes Sul do Tejo"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/vt_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="VT - Vimeca Transportes \n"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/comboio_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Comboio"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/cp_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CP - Comboios de Portugal"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/ft_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="FT - Fertagus \n"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/barco_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Barco"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/af_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="AF - Atlantic Ferries"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/tt_btn"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TT/SL  -Transtejo/Soflusa"
+                android:textAlignment="viewStart"
+                android:textColor="#336B1F"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
