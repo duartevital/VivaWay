@@ -2,6 +2,7 @@ package com.example.vivaway;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,26 +40,32 @@ public class MainMenu extends AppCompatActivity {
     FirebaseUser user;
     String uid;
     TextView username;
-    TextView type;
+    TextView pass_type;
     private DocumentReference docRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_menu);
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        uid = firebaseAuth.getCurrentUser().getUid();
-        generateQRcode(uid);
         getSupportActionBar().setTitle("VivaWay");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.viva_green)));
 
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
         username = findViewById(R.id.user_name_tv);
-        type = findViewById(R.id.pass_type_tv);
+        pass_type = findViewById(R.id.pass_type_tv);
+        uid = firebaseAuth.getCurrentUser().getUid();
+        generateQRcode(uid);
         docRef = firestore.collection("users").document(uid);
 
+        //getProfileDetails();
+    }
+
+    @Override
+    public void onStart(){
         getProfileDetails();
+        super.onStart();
     }
 
     public void doBuy(View view){
@@ -75,7 +82,7 @@ public class MainMenu extends AppCompatActivity {
         ImageView qrCode = findViewById(R.id.qr_code_img);
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE,400,400);
+            BitMatrix bitMatrix = multiFormatWriter.encode(content, BarcodeFormat.QR_CODE,500,500);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             qrCode.setImageBitmap(bitmap);
@@ -84,12 +91,13 @@ public class MainMenu extends AppCompatActivity {
         }
     }
 
-    private void getProfileDetails(){
+    public void getProfileDetails(){
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot != null){
                     username.setText(documentSnapshot.getString("Name"));
+                    pass_type.setText(documentSnapshot.getString("Pass"));
                 }else{
                     Log.d("LOGGER", "No such document");
                 }

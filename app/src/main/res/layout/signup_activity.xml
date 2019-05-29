@@ -2,8 +2,10 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6D10EF"
     tools:context=".SignupActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -13,8 +15,8 @@
 
         <ImageView
             android:id="@+id/app_name_img"
-            android:layout_width="0dp"
-            android:layout_height="250dp"
+            android:layout_width="282dp"
+            android:layout_height="201dp"
             android:background="@drawable/viva_way"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,44 +47,48 @@
             android:imeOptions="actionNext"
             android:singleLine="true"
             android:textAlignment="center"
+            android:textColorHint="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+            app:layout_constraintTop_toBottomOf="@+id/username_et" />
 
         <EditText
             android:id="@+id/username_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="90dp"
             android:hint="Username"
             android:imeOptions="actionNext"
             android:singleLine="true"
             android:textAlignment="center"
+            android:textColorHint="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_et" />
+            app:layout_constraintStart_toEndOf="@+id/profile_img"
+            app:layout_constraintTop_toBottomOf="@+id/app_name_img" />
 
         <EditText
             android:id="@+id/password_et"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             android:hint="Password"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:singleLine="true"
             android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username_et" />
+            app:layout_constraintTop_toBottomOf="@+id/email_et" />
 
         <TextView
             android:id="@+id/login_tv"
@@ -91,25 +97,27 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="28dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginBottom="50dp"
             android:clickable="true"
             android:onClick="goLogin"
             android:text="Already have an account? Login!"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signup_btn" />
+            app:layout_constraintTop_toBottomOf="@+id/signup_btn"
+            app:layout_constraintVertical_bias="0.18" />
 
         <ImageButton
             android:id="@+id/profile_img"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/profile_gray"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/app_name_img" />
 

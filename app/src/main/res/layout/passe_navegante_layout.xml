@@ -27,9 +27,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:text="Navegante Metropolitano: 40€"
+                android:onClick="getButtonPressed"
+                android:text="Navegante Metropolitano"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -39,9 +40,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Navegante 12: Gratuito"
+                android:onClick="getButtonPressed"
+                android:text="Navegante 12"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -51,9 +53,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Navegante +65: 20€"
+                android:onClick="getButtonPressed"
+                android:text="Navegante +65"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -63,9 +66,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Navegante Metropolitano Família: 80€"
+                android:onClick="getButtonPressed"
+                android:text="Navegante Metropolitano Família"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -75,9 +79,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Navegante Municipal: 30€"
+                android:onClick="getButtonPressed"
+                android:text="Navegante Municipal"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -87,9 +92,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Navegante Municipal Família: 60€"
+                android:onClick="getButtonPressed"
+                android:text="Navegante Municipal Família"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>

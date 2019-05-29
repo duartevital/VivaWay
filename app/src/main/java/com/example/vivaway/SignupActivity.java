@@ -38,7 +38,7 @@ public class SignupActivity extends AppCompatActivity {
 
     public static final String EMAIL_KEY = "Email";
     public static final String NAME_KEY = "Name";
-    public static final String TYPE_KEY = "Type";
+    public static final String PASS_KEY = "Pass";
 
     EditText email_et;
     EditText username_et;
@@ -108,6 +108,7 @@ public class SignupActivity extends AppCompatActivity {
         Map<String, Object> data = new HashMap<String, Object>();
         data.put(EMAIL_KEY, email_et.getText().toString());
         data.put(NAME_KEY, username_et.getText().toString());
+        data.put(PASS_KEY, "null");
         colRef.document(user_id).set(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

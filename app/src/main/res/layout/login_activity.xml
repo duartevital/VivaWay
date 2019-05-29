@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6D10EF"
+    android:backgroundTint="#6D10EF"
     tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/app_name_img"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
+        android:layout_width="282dp"
+        android:layout_height="201dp"
         android:background="@drawable/viva_way"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +55,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/email_et"
@@ -61,9 +63,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:hint="E-mail"
+        android:textColorHint="@color/white"
         android:imeOptions="actionNext"
         android:singleLine="true"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +83,8 @@
         android:inputType="textPassword"
         android:singleLine="true"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,6 +101,7 @@
         android:onClick="goRegister"
         android:text="Don't have an account? Sign Up!"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

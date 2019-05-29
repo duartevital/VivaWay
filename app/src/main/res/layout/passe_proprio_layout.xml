@@ -31,9 +31,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="MTS - Metro Sul do Tejo \n"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <TextView
@@ -51,9 +52,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="HLM - Henrique Leonardo da Mota"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -62,9 +64,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="ID - Isidoro Duarte"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -73,9 +76,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="JJ - Joaquim Jerónimo"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -84,9 +88,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="RL - Rodoviária de Lisboa"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -95,9 +100,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="RT - Rodoviária do Tejo"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -106,9 +112,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="SC - Scotturb"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -117,9 +124,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="SFT - Sulfertagus"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -128,9 +136,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="TCB - Transportes Colectivos do Barreiro"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -139,9 +148,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="TST - Transportes Sul do Tejo"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -150,9 +160,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="VT - Vimeca Transportes \n"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <TextView
@@ -170,9 +181,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="CP - Comboios de Portugal"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -181,9 +193,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="FT - Fertagus \n"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <TextView
@@ -201,9 +214,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="AF - Atlantic Ferries"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
             <Button
@@ -212,9 +226,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="getButtonPressed"
                 android:text="TT/SL  -Transtejo/Soflusa"
                 android:textAlignment="viewStart"
-                android:textColor="#336B1F"
+                android:textColor="@color/viva_green"
                 android:textSize="20sp" />
 
         </LinearLayout>

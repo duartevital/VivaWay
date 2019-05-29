@@ -1,5 +1,6 @@
 package com.example.vivaway;
 
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
         getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.viva_green)));
 
         name_tv = findViewById(R.id.name_tv);
         pass_type_tv = findViewById(R.id.pass_type_tv);
@@ -34,7 +36,13 @@ public class ProfileActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         docRef = firestore.collection("users").document(firebaseAuth.getCurrentUser().getUid());
 
+        //getProfileDetails();
+    }
+
+    @Override
+    public void onStart(){
         getProfileDetails();
+        super.onStart();
     }
 
     private void getProfileDetails(){
@@ -43,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot != null){
                     name_tv.setText(documentSnapshot.getString("Name"));
+                    pass_type_tv.setText(documentSnapshot.getString("Pass"));
                 }else{
                     Log.d("LOGGER", "No such document");
                 }
