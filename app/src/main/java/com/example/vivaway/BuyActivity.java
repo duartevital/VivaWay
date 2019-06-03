@@ -22,7 +22,8 @@ import java.util.Map;
 
 public class BuyActivity extends AppCompatActivity {
 
-    public static final String PASS_KEY = "Pass";
+    static final String PASS_KEY = "Pass";
+    static final String VALID_KEY = "Valid";
     private boolean inLayout = false;
     private FirebaseFirestore firestore;
     private FirebaseAuth firebaseAuth;
@@ -76,6 +77,7 @@ public class BuyActivity extends AppCompatActivity {
     public void insertPass(){
         Map<String, Object> data = new HashMap<String, Object>();
         data.put(PASS_KEY, pass_str);
+        data.put(VALID_KEY, true);
         colRef.document(uid).update(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

@@ -36,9 +36,10 @@ import java.util.Map;
 
 public class SignupActivity extends AppCompatActivity {
 
-    public static final String EMAIL_KEY = "Email";
-    public static final String NAME_KEY = "Name";
-    public static final String PASS_KEY = "Pass";
+    static final String EMAIL_KEY = "Email";
+    static final String NAME_KEY = "Name";
+    static final String PASS_KEY = "Pass";
+    static final String VALID_KEY = "Valid";
 
     EditText email_et;
     EditText username_et;
@@ -69,7 +70,7 @@ public class SignupActivity extends AppCompatActivity {
     public void doSignUp(View view){
         final Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
         if(!checkExceptions(view)) {
-            firebaseAuth.createUserWithEmailAndPassword(email_et.getText().toString(), username_et.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            firebaseAuth.createUserWithEmailAndPassword(email_et.getText().toString(), password_et.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
@@ -109,6 +110,7 @@ public class SignupActivity extends AppCompatActivity {
         data.put(EMAIL_KEY, email_et.getText().toString());
         data.put(NAME_KEY, username_et.getText().toString());
         data.put(PASS_KEY, "null");
+        data.put(VALID_KEY, false);
         colRef.document(user_id).set(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
