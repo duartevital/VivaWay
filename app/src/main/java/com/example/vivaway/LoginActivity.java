@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                             //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(LoginActivity.this, "Autenticação falhada.",
                                     Toast.LENGTH_SHORT).show();
                             //updateUI(null);
                         }
@@ -155,11 +155,11 @@ public class LoginActivity extends AppCompatActivity {
     public boolean checkExceptions(View view) {
         boolean exception = false;
         if (TextUtils.isEmpty(email_et.getText().toString())) {
-            Toast.makeText(getApplicationContext(), "Please fill in the required fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
             exception = true;
         }
         if (TextUtils.isEmpty(password_et.getText().toString())) {
-            Toast.makeText(getApplicationContext(), "Please fill in the required fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
             exception = true;
         }
         return exception;

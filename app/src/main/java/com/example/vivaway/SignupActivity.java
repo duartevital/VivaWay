@@ -1,7 +1,6 @@
 package com.example.vivaway;
 
 import android.content.Intent;
-import android.renderscript.ScriptGroup;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,17 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.auth.UserProfileChangeRequest.Builder;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firestore.v1beta1.WriteResult;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Text;
-
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -94,11 +85,11 @@ public class SignupActivity extends AppCompatActivity {
     public boolean checkExceptions(View view) {
         boolean exception = false;
         if (TextUtils.isEmpty(email_et.getText().toString())) {
-            Toast.makeText(getApplicationContext(), "Please fill in the required fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
             exception = true;
         }
         if (TextUtils.isEmpty(password_et.getText().toString())) {
-            Toast.makeText(getApplicationContext(), "Please fill in the required fields", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG).show();
             exception = true;
         }
         return exception;
@@ -109,7 +100,7 @@ public class SignupActivity extends AppCompatActivity {
         Map<String, Object> data = new HashMap<String, Object>();
         data.put(EMAIL_KEY, email_et.getText().toString());
         data.put(NAME_KEY, username_et.getText().toString());
-        data.put(PASS_KEY, "null");
+        data.put(PASS_KEY, "Sem Passe");
         data.put(VALID_KEY, false);
         colRef.document(user_id).set(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {

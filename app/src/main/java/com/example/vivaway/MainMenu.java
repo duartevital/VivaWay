@@ -3,6 +3,11 @@ package com.example.vivaway;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
+import android.nfc.NdefMessage;
+import android.nfc.NdefRecord;
+import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,8 +38,11 @@ import org.w3c.dom.Document;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.nfc.NdefRecord.createMime;
+import static android.nfc.NdefRecord.createTextRecord;
 
-public class MainMenu extends AppCompatActivity {
+
+public class MainMenu extends AppCompatActivity implements NfcAdapter.CreateNdefMessageCallback {
 
     FirebaseFirestore firestore;
     FirebaseAuth firebaseAuth;
@@ -41,6 +50,7 @@ public class MainMenu extends AppCompatActivity {
     String uid;
     TextView username;
     TextView pass_type;
+    NfcAdapter nfcAdapter;
     private DocumentReference docRef;
 
     @Override
@@ -55,17 +65,33 @@ public class MainMenu extends AppCompatActivity {
         user = firebaseAuth.getCurrentUser();
         username = findViewById(R.id.user_name_tv);
         pass_type = findViewById(R.id.pass_type_tv);
+        nfcAdapter = NfcAdapter.getDefaultAdapter(this);
+        if(nfcAdapter==null)
+            Log.e("NFC", "NFC is not supported");
         uid = firebaseAuth.getCurrentUser().getUid();
         generateQRcode(uid);
         docRef = firestore.collection("users").document(uid);
 
-        //getProfileDetails();
+        nfcAdapter.setNdefPushMessageCallback(this, this);
     }
 
     @Override
     public void onStart(){
         getProfileDetails();
         super.onStart();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        nfcAdapter.setNdefPushMessageCallback(this, this);
+    }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // / Make sure the latest Intent will be used in OnResume() that follows
+        setIntent(intent);
     }
 
     public void doBuy(View view){
@@ -105,4 +131,13 @@ public class MainMenu extends AppCompatActivity {
         });
     }
 
+    @Override
+    public NdefMessage createNdefMessage(NfcEvent nfcEvent) {
+        String text = uid;
+        NdefMessage ndefMessage = new NdefMessage(
+                new NdefRecord[] { createTextRecord(
+                        null, text)
+                });
+        return ndefMessage;
+    }
 }

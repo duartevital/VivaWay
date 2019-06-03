@@ -37,13 +37,13 @@ public class BuyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.buy_activity);
-        getSupportActionBar().setTitle("Tickets");
+        getSupportActionBar().setTitle("Passes");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.viva_green)));
 
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
-        uid = user.getUid();
+        uid = user != null ? user.getUid() : null;
         colRef = firestore.collection("users");
         pass_str = "null";
     }
@@ -88,7 +88,7 @@ public class BuyActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(BuyActivity.this, "Não foi possível adicionar passe!", Toast.LENGTH_LONG);
+                        Toast.makeText(BuyActivity.this, "Não foi possível adicionar passe!", Toast.LENGTH_LONG).show();
                     }
                 });
     }

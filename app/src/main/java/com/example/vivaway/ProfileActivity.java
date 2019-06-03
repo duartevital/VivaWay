@@ -25,7 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile_activity);
-        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setTitle("Perfil");
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.viva_green)));
 
         name_tv = findViewById(R.id.name_tv);
@@ -35,8 +35,6 @@ public class ProfileActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         docRef = firestore.collection("users").document(firebaseAuth.getCurrentUser().getUid());
-
-        //getProfileDetails();
     }
 
     @Override
